@@ -130,11 +130,16 @@ class indexController extends Controller
             }else{
                 $data=[
                     'error'=>40001,
-                    'msg'=>'NO'
+                    'msg'=>'PAS NO'
                 ];
             }
-            return $data;
+        }else{
+            $data=[
+                'error'=>40002,
+                'msg'=>'NAME NO'
+            ];
         }
+        return $data;
     }
 
 }
