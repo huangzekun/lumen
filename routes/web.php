@@ -31,3 +31,5 @@ $router->get('/digui/{num}','User\indexController@fbnq');
 
 
 $router->post('/hb_2','User\indexController@hb_2');
+//denglu
+$router->post('/reg','User\indexController@reg');

@@ -115,4 +115,25 @@ class indexController extends Controller
         return $data;
     }
 
+    //denglu
+    public function reg(){
+        $data=($_POST);
+        $model=UserModel::where(['user_name'=>$data['user_name']])->first();
+        if($model){
+            $pwd=password_verify($data['user_pwd'],$model['user_pwd']);
+            if($pwd==true){
+                $data=[
+                    'error'=>0,
+                    'msg'=>'OK'
+                ];
+            }else{
+                $data=[
+                    'error'=>40001,
+                    'msg'=>'NO'
+                ];
+            }
+            return $data;
+        }
+    }
+
 }
