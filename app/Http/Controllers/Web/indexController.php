@@ -9,7 +9,7 @@ use Illuminate\Support\Facades\Redis;
 class indexController extends Controller{
     public function login1(){
         $data=$_POST;
-        $url="passport.anjingdehua.cn/login1";
+        $url="http://passport.anjingdehua.cn/login1";
         $ch=curl_init($url);
         curl_setopt($ch,CURLOPT_RETURNTRANSFER,1);
         curl_setopt($ch,CURLOPT_POST,1);
