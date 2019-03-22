@@ -33,3 +33,7 @@ $router->get('/digui/{num}','User\indexController@fbnq');
 $router->post('/hb_2','User\indexController@hb_2');
 //denglu
 $router->post('/reg','User\indexController@reg');
+
+$router->post('/login2','User\indexController@login2');
+
+$router->post('/login1','Web\indexController@login1');

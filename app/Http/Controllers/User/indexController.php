@@ -142,4 +142,9 @@ class indexController extends Controller
         return $data;
     }
 
+    //zhucwe
+    public function login2(){
+
+    }
+
 }
