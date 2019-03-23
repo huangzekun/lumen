@@ -19,9 +19,10 @@ class indexController extends Controller{
         $res1=json_decode($res,true);
         return $res1;
     }
-    public function mycenter(){
-        $uid=$_POST['uid'];
-        $token=$_POST['token'];
+    public function mycenter(Request $request){
+
+        $uid=$request->input('uid');
+        $token=$request->input('token');
         if(empty($uid) || empty($token)){
             $response=[
                 'error'=>40003,
