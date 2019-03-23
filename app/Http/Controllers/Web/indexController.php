@@ -19,4 +19,31 @@ class indexController extends Controller{
         $res1=json_decode($res,true);
         return $res1;
     }
+    public function mycenter(){
+        $uid=$_POST['uid'];
+        $token=$_POST['token'];
+        if(empty($uid) || empty($token)){
+            $response=[
+                'error'=>40003,
+                'msg'=>'非法操作'
+            ];
+        }else{
+            $key="str:u:token:".$uid;
+            $rtoken=Redis::hget($key,'app');
+            if($token==$rtoken){
+                $response=[
+                    'error'=>0,
+                    'msg'=>'ok'
+                ];
+            }else{
+                $response=[
+                    'error'=>40004,
+                    'msg'=>'token无效'
+                ];
+            }
+        }
+        return $response;
+
+    }
+
 }

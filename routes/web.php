@@ -37,3 +37,4 @@ $router->post('/reg','User\indexController@reg');
 $router->post('/login2','User\indexController@login2');
 
 $router->post('/login1','Web\indexController@login1');
+$router->any('/mycenter','Web\indexController@mycenter');
